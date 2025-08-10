@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>Rock Paper Scissors</h1>
+            <div class="score-container">
+                <div class="score-box player">
+                    <i class="fas fa-user"></i>
+                    <h2>Player</h2>
+                    <span id="player-score">0</span>
+                </div>
+                <div class="vs-badge">VS</div>
+                <div class="score-box computer">
+                    <i class="fas fa-robot"></i>
+                    <h2>Computer</h2>
+                    <span id="computer-score">0</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-status">
+                <div class="result-display">
+                    <h3>Game Status</h3>
+                    <p id="result-text" class="animated">Choose your weapon!</p>
+                </div>
+                
+                <div class="moves-display">
+                    <div class="move player-move">
+                        <h4>Your Choice</h4>
+                        <span id="player-choice" class="choice-display">?</span>
+                    </div>
+                    <div class="move computer-move">
+                        <h4>Computer's Choice</h4>
+                        <span id="computer-choice" class="choice-display">?</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="choices-container">
+                <h3>Make Your Choice</h3>
+                <div class="choice-buttons">
+                    <button class="choice-btn" id="rock">
+                        <span class="choice-icon">✊</span>
+                        <span class="choice-text">Rock</span>
+                    </button>
+                    <button class="choice-btn" id="paper">
+                        <span class="choice-icon">✋</span>
+                        <span class="choice-text">Paper</span>
+                    </button>
+                    <button class="choice-btn" id="scissors">
+                        <span class="choice-icon">✌</span>
+                        <span class="choice-text">Scissors</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
