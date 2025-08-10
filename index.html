@@ -5,64 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <div class="spaceship-container">
+        <div class="spaceship">🚀</div>
+        <div class="spaceship">�</div>
+        <div class="spaceship">�🚀</div>
+        <div class="spaceship">🛸</div>
+        <div class="spaceship">🚀</div>
+        <div class="spaceship">🛸</div>
+        <div class="spaceship">🚀</div>
+        <div class="spaceship">�</div>
+        <div class="spaceship">�🚀</div>
+        <div class="spaceship">🛸</div>
+        <div class="spaceship">🚀</div>
+        <div class="spaceship">🛸</div>
+    </div>
     <div class="game-container">
-        <header>
-            <h1>Rock Paper Scissors</h1>
-            <div class="score-container">
-                <div class="score-box player">
-                    <i class="fas fa-user"></i>
-                    <h2>Player</h2>
-                    <span id="player-score">0</span>
-                </div>
-                <div class="vs-badge">VS</div>
-                <div class="score-box computer">
-                    <i class="fas fa-robot"></i>
-                    <h2>Computer</h2>
-                    <span id="computer-score">0</span>
-                </div>
-            </div>
-        </header>
+        <!-- Score Display -->
+        <div class="score-header">
+            <div class="score">YOU - <span id="player-score">0</span>/10</div>
+            <div class="score">CPU - <span id="computer-score">0</span>/10</div>
+        </div>
 
-        <main>
-            <div class="game-status">
-                <div class="result-display">
-                    <h3>Game Status</h3>
-                    <p id="result-text" class="animated">Choose your weapon!</p>
-                </div>
-                
-                <div class="moves-display">
-                    <div class="move player-move">
-                        <h4>Your Choice</h4>
-                        <span id="player-choice" class="choice-display">?</span>
-                    </div>
-                    <div class="move computer-move">
-                        <h4>Computer's Choice</h4>
-                        <span id="computer-choice" class="choice-display">?</span>
-                    </div>
-                </div>
+        <!-- Game Area -->
+        <div class="game-area">
+            <div id="result-text">You win!</div>
+            <div class="hands">
+                <div class="game-hand left"></div>
+                <div class="game-hand right"></div>
+            </div>
+        </div>
+
+        <!-- Bottom Panel -->
+        <div class="bottom-panel">
+            <!-- Stats Box -->
+            <div class="box stats-box">
+                <div class="stat">Wins - <span>0</span></div>
+                <div class="stat">Draws - <span>0</span></div>
+                <div class="stat">Losses - <span>0</span></div>
             </div>
 
-            <div class="choices-container">
-                <h3>Make Your Choice</h3>
-                <div class="choice-buttons">
-                    <button class="choice-btn" id="rock">
-                        <span class="choice-icon">✊</span>
-                        <span class="choice-text">Rock</span>
-                    </button>
-                    <button class="choice-btn" id="paper">
-                        <span class="choice-icon">✋</span>
-                        <span class="choice-text">Paper</span>
-                    </button>
-                    <button class="choice-btn" id="scissors">
-                        <span class="choice-icon">✌</span>
-                        <span class="choice-text">Scissors</span>
-                    </button>
+            <!-- Choices Box -->
+            <div class="box choice-box">
+                <div class="choice-container">
+                    <div class="choice-display">
+                        <span class="choice-hand">✊</span>
+                        <span class="choice-name">ROCK</span>
+                    </div>
+                    <div class="choice-display">
+                        <span class="choice-hand">✋</span>
+                        <span class="choice-name">PAPER</span>
+                    </div>
+                    <div class="choice-display">
+                        <span class="choice-hand">✌</span>
+                        <span class="choice-name">SCISSORS</span>
+                    </div>
                 </div>
             </div>
-        </main>
+
+            <!-- Credits Box -->
+            <div class="box credits-box">
+                ROCK PAPER SCISSORS<br>
+                BY ALDEVERA
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
