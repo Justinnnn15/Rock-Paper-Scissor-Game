@@ -159,20 +159,65 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 100px;
+    padding: 0 140px;
+    margin-top: 20px;
+}
+
+.hands {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin-top: 20px;
 }
 
 .game-hand {
-    width: 200px;
-    height: 100px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    width: 400px;
+    height: 400px;
+    position: relative;
     filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.3));
 }
 
-.game-hand.left {
-    transform: scaleX(-1);
+.hand-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.hand-image.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#player-hand .hand-image {
+    transform-origin: right center;
+}
+
+#computer-hand .hand-image {
+    transform-origin: left center;
+}
+
+/* Hand Animations */
+@keyframes playerShake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-15deg); }
+    75% { transform: rotate(15deg); }
+}
+
+@keyframes computerShake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    75% { transform: rotate(-15deg); }
+}
+
+.shake-animation #player-hand .hand-image {
+    animation: playerShake 0.5s ease-in-out;
+}
+
+.shake-animation #computer-hand .hand-image {
+    animation: computerShake 0.5s ease-in-out;
 }
 
 /* Bottom Panel */
@@ -242,10 +287,9 @@ body {
     align-items: center;
     gap: 5px;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.2s ease;
     padding: 15px;
-    background-color: #00bcd4;
-    border-radius: 4px;
+    background-color: transparent;
     width: 100px;
     height: 100px;
     justify-content: center;
@@ -253,18 +297,19 @@ body {
 
 .choice-display:hover {
     transform: scale(1.05);
+    filter: brightness(1.2);
 }
 
 .choice-hand {
     font-size: 2.2rem;
     margin-bottom: 8px;
-    color: #ffffff;
+    color: var(--accent-primary);
 }
 
 .choice-name {
     font-size: 0.8rem;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--accent-primary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
