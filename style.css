@@ -287,10 +287,9 @@ body {
     align-items: center;
     gap: 5px;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.2s ease;
     padding: 15px;
-    background-color: #00bcd4;
-    border-radius: 4px;
+    background-color: transparent;
     width: 100px;
     height: 100px;
     justify-content: center;
@@ -298,18 +297,19 @@ body {
 
 .choice-display:hover {
     transform: scale(1.05);
+    filter: brightness(1.2);
 }
 
 .choice-hand {
     font-size: 2.2rem;
     margin-bottom: 8px;
-    color: #ffffff;
+    color: var(--accent-primary);
 }
 
 .choice-name {
     font-size: 0.8rem;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--accent-primary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
