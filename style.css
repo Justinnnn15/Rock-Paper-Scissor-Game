@@ -159,20 +159,34 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 100px;
+    padding: 0 50px; /* Reduced padding to move hands closer to the border */
 }
 
 .game-hand {
-    width: 200px;
-    height: 100px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    width: 300px; /* Increased size */
+    height: 300px; /* Increased size */
+    position: relative;
     filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.3));
 }
 
+.hand-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hand-image.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .game-hand.left {
-    transform: scaleX(-1);
+    /* Remove flip for human hand as images are already properly oriented */
+    transform: none;
 }
 
 /* Bottom Panel */
@@ -244,8 +258,7 @@ body {
     cursor: pointer;
     transition: transform 0.2s;
     padding: 15px;
-    background-color: #00bcd4;
-    border-radius: 4px;
+    background-color: transparent;
     width: 100px;
     height: 100px;
     justify-content: center;
@@ -258,13 +271,13 @@ body {
 .choice-hand {
     font-size: 2.2rem;
     margin-bottom: 8px;
-    color: #ffffff;
+    color: var(--accent-primary);
 }
 
 .choice-name {
     font-size: 0.8rem;
     font-weight: 500;
-    color: #ffffff;
+    color: var(--accent-primary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
