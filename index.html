@@ -21,7 +21,15 @@
         <div class="spaceship">🚀</div>
         <div class="spaceship">🛸</div>
     </div>
-    <div class="game-container">
+    <!-- Start Screen -->
+    <div id="startScreen" class="start-screen active">
+        <div class="start-content">
+            <h1 class="game-title">ROCK PAPER SCISSORS</h1>
+            <button id="startGameBtn" class="start-btn">START GAME</button>
+        </div>
+    </div>
+
+    <div class="game-container" style="display: none;">
         <!-- Score Display -->
         <div class="score-header">
             <div class="score">YOU - <span id="player-score">0</span>/10</div>
@@ -77,6 +85,18 @@
             </div>
         </div>
     </div>
+
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2 id="gameOverText" class="game-over-text">YOU LOSE!</h2>
+            <div class="modal-buttons">
+                <button id="restartBtn" class="modal-btn restart-btn">Restart Game</button>
+                <button id="continueBtn" class="modal-btn continue-btn">Continue Playing</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
